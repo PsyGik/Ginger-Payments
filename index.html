@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ginger Payments - Frontend Assignment</title>
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400,600,300,700">
+    <!--Feel free to remove the style tag-->
+    <link rel="stylesheet" type="text/css" href="app.css">
+</head>
+
+<body ng-app="ginger" ng-controller="gingerCtrl as vm">
+    <header>
+        <h1>Assignment</h1>
+    </header>
+    <main>
+        <aside>
+            <button ng-click="vm.doCallback()">Callback</button>
+            <button ng-click="vm.doPromise()">Promise</button>
+            <button>Filter Payment-Method</button>
+            <button ng-click="vm.showPayment()">Add payment</button>
+        </aside>
+        <section>
+            <!-- Payments Table -->
+        </section>
+    </main>
+    <div id="payment-form-container" class="hidden">
+        <form id="payment-form">
+            <label for="merchant">Merchant</label>
+            <input type="text" id="fname" name="merchant-name" ng-model="vm.postData.merchant">
+            
+            <label for="currency">Currency</label>
+            <select id="currency" name="currency" ng-model="vm.postData.currency">
+                <option value="GBP">GBP</option>
+                <option value="AUD">AUD</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+            </select>
+            
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" name="amount" ng-model="vm.postData.amount">
+
+            <label for="method">Method</label>
+            <select id="method" name="method" ng-model="vm.postData.method">
+                <option value="creditcard">Credit Card</option>
+                <option value="bank-transfer">Bank Transfer</option>
+                <option value="ideal">Ideal</option>
+            </select>
+             <label for="status">Status</label>
+            <select id="status" name="status" ng-model="vm.postData.status">
+                <option value="accepted">Accepted</option>
+                <option value="denied">Denied</option>
+            </select>
+            <input type="submit" value="Submit" ng-click="vm.addPayment()">
+        </form>
+    </div>
+    <table id="table" class="hidden">
+        <thead>
+            <tr>
+                <th>Mercchant</th>
+                <th>Currency</th>
+                <th>Amount</th>
+                <th>Method
+                    <select id="method-filter" ng-model="vm.filter">
+                        <option value="">None</option>
+                        <option value="creditcard">Credit Card</option>
+                        <option value="bank-transfer">Bank Transfer</option>
+                        <option value="ideal">iDeal</option>
+                    </select>
+                </th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="payment in vm.payment | filter:vm.filter"">
+                <td>{{payment.merchant}}</td>   
+                <td>{{payment.currency}}</td>   
+                <td>{{payment.amount/100}}</td>   
+                <td>{{payment.method}}</td>   
+                <td>{{payment.status}}</td>   
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+
+</html>

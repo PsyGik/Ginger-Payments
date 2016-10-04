@@ -3,6 +3,7 @@ angular.module('ginger', [])
 
         var vm = this;
         vm.postData = { merchant: "", currency: "", amount: 0, method: "", status: "" };
+        vm.serverURL = "http://localhost:3000/payments"; //Because not everyone has 3000 port empty
 
         /**
          * Get payment with highest amount
@@ -10,7 +11,7 @@ angular.module('ginger', [])
          */
         vm.doCallback = function() {
             console.log("Getting highest 20 payments");
-            $http.get("http://localhost:3000/payments?_sort=amount&_order=DESC&_limit=20").then(function success(resp) {
+            $http.get(vm.serverURL+"?_sort=amount&_order=DESC&_limit=20").then(function success(resp) {
                 console.log(resp.data);
                 $("#table").removeClass("hidden");
                 vm.payment = resp.data;
@@ -23,8 +24,8 @@ angular.module('ginger', [])
          * @return {[type]} [description]
          */
         vm.doPromise = function() {
-            console.log("Getting highest 20 payments");
-            $http.get("http://localhost:3000/payments?merchant=Ginger").then(function success(resp) {
+            console.log("Getting payments from <Ginger></Ginger>");
+            $http.get(vm.serverURL+"?merchant=Ginger").then(function success(resp) {
                 console.log(resp.data);
                 $("#table").removeClass("hidden");
                 vm.payment = resp.data;

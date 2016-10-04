@@ -21,6 +21,10 @@
             <button ng-click="vm.doPromise()">Promise</button>
             <button>Filter Payment-Method</button>
             <button ng-click="vm.showPayment()">Add payment</button>
+             <form id="payment-form">
+            <label for="merchant">Payments Server URL (Defaults to localhost:3000/payments)</label>
+            <input type="text" id="fname" name="merchant-name" ng-model="vm.serverURL">
+    </form>
         </aside>
         <section>
             <!-- Payments Table -->

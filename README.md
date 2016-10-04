@@ -18,6 +18,10 @@ This assignment is to implement client-side API requests to the JSON-server (whi
  ``` 
 
  To open the index.html file, run a local server.
+ ```
+ python -m SimpleHTTPServer
+ ```
+> If the Server URL is not on localhost:3000, you can change it in the input field provided
  
  ## Tasks
  
@@ -34,8 +38,7 @@ This assignment is to implement client-side API requests to the JSON-server (whi
  ### Filter Payment-Method
  
 Use the filer dropdown in the table to filter 
- 
- ### Add Payments
- 
+
+ ### Add Payments 
  When this button is clicked, a form is displayed to POST data to the JSON-server.
 

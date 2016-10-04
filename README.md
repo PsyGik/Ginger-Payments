@@ -6,7 +6,7 @@ This assignment is to implement client-side API requests to the JSON-server (whi
  ## Overview
  
  - Language: JavaScript, HTML, CSS
- - Estimated effort: 2-4 hours
+ - Estimated effort: 2 hours
  - Dependencies: [JSON-server](https://www.npmjs.com/package/json-server)
 
  ## Setup
@@ -16,6 +16,8 @@ This assignment is to implement client-side API requests to the JSON-server (whi
  ```
  npm install && npm run start:api
  ``` 
+
+ To open the index.html file, run a local server.
  
  ## Tasks
  
@@ -23,27 +25,17 @@ This assignment is to implement client-side API requests to the JSON-server (whi
  
  ### Callback button
  
- When this button is clicked use a callback to get the 20 payments with the highest amount (notice that the amounts are in cents) and render
-  the data in a table, where each payment is stored in a row. 
+ When this button is clicked a callback is made to get the 20 payments with the highest amount and renders the data in a table, where each payment is stored in a row. 
  
  ### Promise button
  
- When this button is clicked use a promise to do a GET request for the payments from the merchant "Ginger".
+ When this button is clicked a promise is made for a GET request for the payments from the merchant "Ginger".
  
  ### Filter Payment-Method
  
- Create a client-side filter for the payment-method iDeal (method: "ideal") or if you feel ambitious
- (and have enough time left) create a dropdown with all the payment-methods ("creditcard", "bank-transfer", "ideal"). 
+Use the filer dropdown in the table to filter 
  
  ### Add Payments
  
- Create an input form which performs a POST request to the JSON-server
+ When this button is clicked, a form is displayed to POST data to the JSON-server.
 
- ### Bonus: Add E2E test
- 
- ## What to deliver 
- 
- Provide a link to your Github/Bitbucket/Gitlab repository where we only need to:
-  1. npm install 
-  2. run the JSON-server 
-  3. open the index.html file or run a static server to see your code working

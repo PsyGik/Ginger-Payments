@@ -39,6 +39,6 @@ This assignment is to implement client-side API requests to the JSON-server (whi
  
 Use the filer dropdown in the table to filter 
 
- ### Add Payments 
+### Add Payments 
  When this button is clicked, a form is displayed to POST data to the JSON-server.
 

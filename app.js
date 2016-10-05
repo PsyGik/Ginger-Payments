@@ -19,7 +19,7 @@ angular.module('ginger', [])
         }
 
         function addPayment(serverURL, data) {
-            return $http.post("http://localhost:3000/payments", data)
+            return $http.post(serverURL, data)
         }
     }])
     .controller('gingerCtrl', ['$http', 'gingerFactory', function($http, gingerFactory) {

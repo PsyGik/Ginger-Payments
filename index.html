@@ -16,16 +16,18 @@
         <h1>Assignment</h1>
     </header>
     <main>
-        <aside>
+        <div>
             <button ng-click="vm.callback()">Callback</button>
             <button ng-click="vm.promise()">Promise</button>
             <button>Filter Payment-Method</button>
             <button ng-click="vm.showPayment()">Add payment</button>
-             <form id="payment-form">
-            <label for="merchant">Payments Server URL (Defaults to localhost:3000/payments)</label>
-            <input type="text" id="fname" name="merchant-name" ng-model="vm.serverURL">
-    </form>
-        </aside>
+        </div>
+        <div>
+            <form id="payment-form">
+                <label for="merchant">Payments Server URL (Defaults to localhost:3000/payments)</label>
+                <input type="text" id="fname" name="merchant-name" ng-model="vm.serverURL">
+            </form>
+        </div>
         <section>
             <!-- Payments Table -->
         </section>
@@ -34,7 +36,6 @@
         <form id="payment-form">
             <label for="merchant">Merchant</label>
             <input type="text" id="fname" name="merchant-name" ng-model="vm.postData.merchant">
-            
             <label for="currency">Currency</label>
             <select id="currency" name="currency" ng-model="vm.postData.currency">
                 <option value="GBP">GBP</option>
@@ -42,17 +43,15 @@
                 <option value="USD">USD</option>
                 <option value="EUR">EUR</option>
             </select>
-            
             <label for="amount">Amount</label>
             <input type="number" id="amount" name="amount" ng-model="vm.postData.amount">
-
             <label for="method">Method</label>
             <select id="method" name="method" ng-model="vm.postData.method">
                 <option value="creditcard">Credit Card</option>
                 <option value="bank-transfer">Bank Transfer</option>
                 <option value="ideal">Ideal</option>
             </select>
-             <label for="status">Status</label>
+            <label for="status">Status</label>
             <select id="status" name="status" ng-model="vm.postData.status">
                 <option value="accepted">Accepted</option>
                 <option value="denied">Denied</option>
@@ -78,7 +77,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="payment in vm.payment | filter:vm.filter"">
+            <tr ng-repeat="payment in vm.payment | filter:vm.filter" ">
                 <td>{{payment.merchant}}</td>   
                 <td>{{payment.currency}}</td>   
                 <td>{{payment.amount/100}}</td>   
@@ -88,8 +87,8 @@
         </tbody>
     </table>
 </body>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
-<script type="text/javascript" src="app.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js "></script>
+<script type="text/javascript " src="app.js "></script>
 
 </html>

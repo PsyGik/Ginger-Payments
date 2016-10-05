@@ -26,10 +26,10 @@ main {
 }
 
 table {
-    margin: 16px;
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 70%;
+    width: 100%;
+    margin: 16px;
 }
 
 td,

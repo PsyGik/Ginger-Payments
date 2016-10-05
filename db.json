@@ -4585,6 +4585,22 @@
       "method": "bank-transfer",
       "status": "denied",
       "id": 511
+    },
+    {
+      "merchant": "MyIne",
+      "currency": "GBP",
+      "amount": 17664992,
+      "method": "bank-transfer",
+      "status": "denied",
+      "id": 512
+    },
+    {
+      "merchant": "SomeCoolMerchant",
+      "currency": "AUD",
+      "amount": 1992773,
+      "method": "bank-transfer",
+      "status": "accepted",
+      "id": 513
     }
   ]
 }

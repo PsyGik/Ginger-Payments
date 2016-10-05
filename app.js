@@ -66,6 +66,7 @@ angular.module('ginger', [])
             gingerFactory.addPayment(vm.serverURL, vm.postData).then(function success(data) {
                 console.log(data);
                 alert("Payment Successful");
+                vm.postData = { merchant: "", currency: "", amount: 0, method: "", status: "" };
 
             }, function error(error) {
 

@@ -4577,6 +4577,14 @@
       "method": "bank-transfer",
       "status": "accepted",
       "id": 510
+    },
+    {
+      "merchant": "MyIne",
+      "currency": "GBP",
+      "amount": 17664992,
+      "method": "bank-transfer",
+      "status": "denied",
+      "id": 511
     }
   ]
 }
